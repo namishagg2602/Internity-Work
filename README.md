@@ -36,5 +36,5 @@ e-> Trees is used to store data in the form of a tree
      Also, learned about their syntax and functions that come with them.
      
      
-TASK DAY-2
+*TASK DAY-2*
 IDEONE LINK : https://ideone.com/iIUaDP
