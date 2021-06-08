@@ -1,6 +1,8 @@
 # Internity-Work
 All the work done during Internity internship is available here.
 
+
+TASK DAY-1
 1.
 Data is collection of facts and information used to carry out analysis or computation.
 
@@ -32,3 +34,7 @@ e-> Trees is used to store data in the form of a tree
 
 6. Explored more on STL's such as Vector, Stack, Queue, Map, Pair, Priority Queue and Sets.
      Also, learned about their syntax and functions that come with them.
+     
+     
+TASK DAY-2
+IDEONE LINK : https://ideone.com/iIUaDP
