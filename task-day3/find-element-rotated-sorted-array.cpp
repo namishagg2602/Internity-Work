@@ -21,10 +21,27 @@ while(lo<=hi)
         break;
     }
     else
-        if(ele>arr[mid] && ele<=arr[hi])
-          lo=mid+1;
-        else
-            hi=mid-1;
+        {
+            if(arr[lo]<=arr[mid])
+            {
+                if(ele>=arr[lo] && ele<=arr[mid])
+                {
+                    hi=mid-1;
+                }
+                else
+                lo=mid+1;
+                
+            }
+            else
+            if(arr[lo]>=arr[mid])
+            {
+                if(ele>=arr[mid] && ele<=arr[hi])
+                lo=mid+1;
+                else
+                hi=mid-1;
+            }
+            
+        }
 }
 
 pos==-1?cout<<"Element not found\n":cout<<"Element found at index : "<<pos<<"\n";
