@@ -1,0 +1,45 @@
+// Flatten a multilevel linked list
+//https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list
+
+
+Node* recur(Node* par,Node* ch)
+    {
+        Node* t=ch;
+        while(t)
+        {
+            if(t->child)
+            t=recur(t,t->child);
+            
+            if(!t->next)
+            {
+                t->next=par->next;
+                if(par->next)
+                    par->next->prev=t;
+                par->next=ch;
+                ch->prev=par;
+                par->child=NULL;
+                return t;
+            }
+            t=t->next;
+        }
+        
+        return t;
+    }
+
+********  starts here-> *******
+
+  Node* flatten(Node* head) {
+        if(!head) 
+            return head;
+        Node* t=head;
+        
+        while(t)
+        {
+            if(t->child)
+            t=recur(t,t->child);
+            
+            t=t->next;
+        }
+        
+        return head;
+    }

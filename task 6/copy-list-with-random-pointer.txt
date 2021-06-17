@@ -1,0 +1,54 @@
+/*  Duplicating and creating a "brand new"  deep copy of a LL 
+with all nodes of a new LL freshly created. 
+
+https://leetcode.com/problems/copy-list-with-random-pointer/
+*/
+Node* copyRandomList(Node* head) {
+        Node* head2=NULL;
+        Node* t=head;
+        Node* tr;
+        Node* r1;
+        Node* r2;
+        while(t)
+        {
+            Node* n=new Node(t->val);
+            if(!head2)
+            {
+                head2=n;
+                tr=n;
+            }
+            else
+            {
+                tr->next=n;
+                tr=n;
+            }
+            t=t->next;
+        }
+        
+        
+        Node* t2=head;
+        t=head2;
+        while(t2)
+        {
+            r1=t2->random;
+            tr=head2;
+            r2=head;
+            if(r1==NULL)
+            {
+                t->random=NULL;
+            }
+            else
+            {
+            while(r2 && r2!=r1) 
+            {
+                r2=r2->next;
+                tr=tr->next;
+            }
+            t->random=tr;
+            }
+            t2=t2->next;
+            t=t->next;
+        }
+        
+        return head2;
+    }
